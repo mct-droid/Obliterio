@@ -962,14 +962,18 @@ section:has(.personagens-box) {
 
 
 
-/* ================= HEADER MOBILE ================= */
+/* ================= MOBILE RESET REAL ================= */
 @media (max-width: 768px) {
+
+  /* ===== HEADER ===== */
   .main-header {
     padding: 10px 18px;
+    flex-direction: row;
   }
 
   .main-header nav {
     gap: 14px;
+    flex-wrap: wrap;
   }
 
   .main-header nav a {
@@ -980,33 +984,86 @@ section:has(.personagens-box) {
   .logo img {
     height: 26px;
   }
-}
 
-/* CELULAR PEQUENO */
-@media (max-width: 480px) {
-  .main-header {
+  /* ===== HERO ===== */
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+  }
+
+  .hero-section h1 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .hero-section p {
+    font-size: 15px;
+  }
+
+  /* ===== SEÇÕES GERAIS ===== */
+  .content-section {
+    padding: 70px 20px;
+  }
+
+  /* ===== SINOPSE ===== */
+  .book-info {
     flex-direction: column;
-    gap: 10px;
-    padding: 12px;
+    gap: 35px;
+    padding: 35px 22px;
   }
 
-  .main-header nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+  .book-cover img {
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
   }
 
-  .main-header nav a {
-    font-size: 10px;
+  .book-text h2 {
+    font-size: 26px;
+    text-align: center;
   }
-}
 
-/* ================= PERSONAGENS MOBILE ================= */
-@media (max-width: 768px) {
+  .book-text p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .btn-compre {
+    margin: 25px auto 0;
+  }
+
+  /* ===== DIVISORES ===== */
+  .divisao-wrapper,
+  .cutecute-divider {
+    height: 140px;
+    margin: -60px 0;
+  }
+
+  .divisao-img,
+  .cutecute-divider img {
+    width: 80%;
+  }
+
+  /* ===== CAPÍTULO ===== */
+  .chapter-box {
+    padding: 35px 22px;
+  }
+
+  .chapter-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .chapter-content {
+    font-size: 15px;
+  }
+
+  /* ===== PERSONAGENS (AQUI ESTAVA O CAOS) ===== */
   .personagens-box {
     flex-direction: column;
-    padding: 40px 20px;
-    gap: 30px;
+    padding: 35px 22px;
+    gap: 35px;
   }
 
   .personagem-grande {
@@ -1015,16 +1072,18 @@ section:has(.personagens-box) {
 
   .personagem-grande img {
     height: auto;
-    max-width: 220px;
+    width: 100%;
+    max-width: 240px;
   }
 
   .personagem-info {
-    max-width: 100%;
+    align-items: center;
     text-align: center;
+    max-width: 100%;
   }
 
   .personagem-info h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .personagem-info p {
@@ -1041,20 +1100,38 @@ section:has(.personagens-box) {
     width: 55px;
     height: 55px;
   }
-}
 
-/* CELULAR PEQUENO */
-@media (max-width: 480px) {
-  .grade-personagens {
-    grid-template-columns: repeat(4, 48px);
+  /* ===== ARQUIVOS ===== */
+  .arquivos-box {
+    padding: 50px 22px;
+    margin: 90px auto;
   }
 
-  .quad {
-    width: 48px;
-    height: 48px;
+  .arquivos-box h2 {
+    font-size: 28px;
   }
-}
 
-    width: 30%;
+  .arquivos-texto {
+    font-size: 15px;
+  }
+
+  .botao-arquivos {
+    font-size: 15px;
+    padding: 14px 30px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-links {
+    gap: 25px;
+    flex-direction: row;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 12px;
+    margin-top: 20px;
   }
 }
