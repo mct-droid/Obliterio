@@ -962,85 +962,135 @@ section:has(.personagens-box) {
 
 
 
-/* ================= CONFIGURAÇÃO PARA CELULAR (RESPONSIVO) ================= */
+/* ============================================================
+   CÓDIGO COMPLETO DE RESPONSIVIDADE (PARA CELULAR)
+   ============================================================ */
+
 @media (max-width: 768px) {
     
-    /* 1. Faz o fundo cobrir a tela toda e não repetir */
-    body {
-        background-size: cover;
-        background-attachment: scroll; /* Melhor para performance no celular */
+    /* 1. IMPEDE QUE O SITE "VANCE" PARA OS LADOS */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
     }
 
-    /* 2. Arruma o Menu (Header) */
+    /* 2. MENU DE NAVEGAÇÃO (HEADER) */
     .main-header {
-        padding: 15px 10px;
-        flex-direction: column;
+        padding: 10px;
+        flex-direction: column; /* Coloca logo e links um sob o outro */
         height: auto;
-        position: relative; /* Evita que ele cubra o conteúdo inicial */
+        position: fixed;
+        background: rgba(10, 10, 10, 0.9); /* Escurece um pouco mais no mobile */
     }
 
     .main-header nav {
-        display: flex;
-        flex-wrap: wrap;
+        gap: 12px;
+        flex-wrap: wrap; /* Faz os links quebrarem linha se necessário */
         justify-content: center;
-        gap: 10px;
+        width: 100%;
         margin-top: 10px;
     }
 
     .main-header nav a {
-        font-size: 12px;
-        letter-spacing: 0px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
     }
 
-    /* 3. Arruma a Seção Inicial (Hero) para o texto não sair da tela */
+    .logo img {
+        height: 25px; /* Diminui o tamanho do logo */
+    }
+
+    /* 3. FRASE PRINCIPAL (HERO) */
     .hero-section {
-        padding: 20px;
+        padding: 120px 20px 50px; /* Dá espaço para o menu fixo */
         height: auto;
-        min-height: 80vh;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-section h1 {
-        font-size: 22px !important;
-        line-height: 1.3;
+        font-size: 22px !important; /* Tamanho que cabe na largura do celular */
+        line-height: 1.4;
         width: 100%;
+        max-width: 100%;
     }
 
-    /* 4. Arruma os Cards (Personagens e Arquivos) */
-    .personagens-box, .arquivos-box, .book-info, .chapter-box {
-        flex-direction: column !important; /* Coloca um embaixo do outro */
-        width: 92% !important; /* Dá uma margem nas laterais */
-        margin: 20px auto !important;
-        padding: 20px !important;
-        max-width: none;
-        text-align: center;
+    .hero-section p {
+        font-size: 16px;
     }
 
-    /* Ajusta a imagem da Almi */
-    .personagem-grande img {
-        max-width: 200px !important;
+    /* 4. CARDS (PERSONAGENS, ARQUIVOS, SINOPSE E TRECHO) */
+    /* Isso força todos os quadros a ficarem verticais e centralizados */
+    .personagens-box, 
+    .arquivos-box, 
+    .book-info, 
+    .chapter-box {
+        flex-direction: column !important; /* Foto em cima, texto embaixo */
+        width: 92% !important; /* Cria a margem lateral que você quer */
+        margin: 30px auto !important;
+        padding: 25px 15px !important;
         height: auto !important;
+        text-align: center;
+        max-width: none;
+    }
+
+    /* Ajuste da Imagem da Almi */
+    .personagem-grande img {
+        max-width: 200px !important; /* Evita que a imagem fique gigante */
+        height: auto !important;
+        margin-bottom: 20px;
     }
 
     .personagem-info {
         width: 100%;
+        max-width: 100%;
     }
 
-    /* 5. Ajusta a Grade de Quadrados */
+    .personagem-info h3 {
+        font-size: 26px;
+        margin-top: 10px;
+    }
+
+    /* 5. GRADE DE QUADRADOS DOS PERSONAGENS */
     .grade-personagens {
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 8px;
-        max-width: 250px;
-        margin: 20px auto 0;
+        grid-template-columns: repeat(4, 1fr) !important; /* Mantém 4 colunas */
+        gap: 10px;
+        justify-content: center;
+        max-width: 260px; /* Garante que a grade não fique muito larga */
+        margin: 25px auto 0;
     }
 
     .quad {
         width: 100% !important;
-        height: 50px !important;
+        height: 55px !important; /* Mantém o formato quadrado */
+        border-radius: 8px;
     }
 
-    /* 6. Ajusta Imagens Decorativas (Divisores) */
-    .divisao-img, .cutecute-divider img {
-        width: 90% !important;
-        height: auto !important;
+    /* 6. IMAGENS DE DIVISÃO (FLORES E CUTE CUTE) */
+    .divisao-wrapper, 
+    .cutecute-divider {
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .divisao-img, 
+    .cutecute-divider img {
+        width: 85% !important; /* Diminui para caber na tela */
+        max-width: 320px;
+        position: relative;
+        left: auto;
+        transform: none;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* 7. BOTÕES */
+    .btn-compre, 
+    .botao-arquivos, 
+    .btn-leitura {
+        width: 80%; /* Botões maiores e mais fáceis de clicar no celular */
+        padding: 12px 20px;
+        font-size: 14px;
     }
 }
