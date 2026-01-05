@@ -962,18 +962,19 @@ section:has(.personagens-box) {
 
 
 
-/* ================= MOBILE RESET REAL ================= */
+/* ================= MOBILE HEADER FIX ================= */
 @media (max-width: 768px) {
 
-  /* ===== HEADER ===== */
   .main-header {
-    padding: 10px 18px;
-    flex-direction: row;
+    padding: 10px 16px;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .main-header nav {
-    gap: 14px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
 
   .main-header nav a {
@@ -982,88 +983,18 @@ section:has(.personagens-box) {
   }
 
   .logo img {
-    height: 26px;
+    height: 28px;
   }
 
-  /* ===== HERO ===== */
-  .hero-section {
-    height: auto;
-    min-height: 100vh;
-    padding: 120px 20px 60px;
-  }
+}
+/* ================= PERSONAGENS MOBILE FIX ================= */
+@media (max-width: 768px) {
 
-  .hero-section h1 {
-    font-size: 22px;
-    line-height: 1.4;
-  }
-
-  .hero-section p {
-    font-size: 15px;
-  }
-
-  /* ===== SEÇÕES GERAIS ===== */
-  .content-section {
-    padding: 70px 20px;
-  }
-
-  /* ===== SINOPSE ===== */
-  .book-info {
-    flex-direction: column;
-    gap: 35px;
-    padding: 35px 22px;
-  }
-
-  .book-cover img {
-    width: 100%;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  .book-text h2 {
-    font-size: 26px;
-    text-align: center;
-  }
-
-  .book-text p {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .btn-compre {
-    margin: 25px auto 0;
-  }
-
-  /* ===== DIVISORES ===== */
-  .divisao-wrapper,
-  .cutecute-divider {
-    height: 140px;
-    margin: -60px 0;
-  }
-
-  .divisao-img,
-  .cutecute-divider img {
-    width: 80%;
-  }
-
-  /* ===== CAPÍTULO ===== */
-  .chapter-box {
-    padding: 35px 22px;
-  }
-
-  .chapter-title {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .chapter-content {
-    font-size: 15px;
-  }
-
-  /* ===== PERSONAGENS (AQUI ESTAVA O CAOS) ===== */
   .personagens-box {
     flex-direction: column;
-    padding: 35px 22px;
-    gap: 35px;
+    padding: 30px 20px;
+    gap: 25px;
+    text-align: center;
   }
 
   .personagem-grande {
@@ -1071,23 +1002,23 @@ section:has(.personagens-box) {
   }
 
   .personagem-grande img {
+    max-width: 220px;
     height: auto;
-    width: 100%;
-    max-width: 240px;
   }
 
   .personagem-info {
     align-items: center;
-    text-align: center;
     max-width: 100%;
   }
 
   .personagem-info h3 {
     font-size: 24px;
+    margin-top: 10px;
   }
 
   .personagem-info p {
     font-size: 15px;
+    line-height: 1.6;
   }
 
   .grade-personagens {
@@ -1100,38 +1031,5 @@ section:has(.personagens-box) {
     width: 55px;
     height: 55px;
   }
-
-  /* ===== ARQUIVOS ===== */
-  .arquivos-box {
-    padding: 50px 22px;
-    margin: 90px auto;
-  }
-
-  .arquivos-box h2 {
-    font-size: 28px;
-  }
-
-  .arquivos-texto {
-    font-size: 15px;
-  }
-
-  .botao-arquivos {
-    font-size: 15px;
-    padding: 14px 30px;
-  }
-
-  /* ===== FOOTER ===== */
-  .footer-links {
-    gap: 25px;
-    flex-direction: row;
-  }
-
-  .footer-links a {
-    font-size: 14px;
-  }
-
-  .copyright {
-    font-size: 12px;
-    margin-top: 20px;
-  }
 }
+
