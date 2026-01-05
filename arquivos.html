@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Arquivos</title>
+  <link rel="stylesheet" href="arquivos.css">
+</head>
+
+<body>
+
+<div class="arquivos-container">
+
+  <!-- LOGIN GERAL -->
+  <div id="login">
+    <h1>Arquivos Secretos</h1>
+    <p class="aviso">
+      Encontrou o QR Code pelo livro?<br>
+      Digite a senha para acessar os arquivos escondidos.
+    </p>
+
+    <input type="password" id="senhaGeral" placeholder="Senha de acesso">
+    <button onclick="verificarSenhaGeral()">Acessar</button>
+  </div>
+
+  <!-- CAPÍTULOS -->
+  <div id="area-capitulos" class="hidden">
+
+    <h2>Capítulos</h2>
+
+    <div class="capitulos-lista">
+      <button onclick="pedirSenha('licorina')">Licorina de Amarílis</button>
+      <button onclick="pedirSenha('urticaria')">Urticária</button>
+      <button onclick="pedirSenha('semente')">“Semente” da Rebeldia</button>
+      <button onclick="pedirSenha('alteo')">Alteo foi Amarílis</button>
+    </div>
+
+    <div class="conteudo" id="conteudo"></div>
+  </div>
+
+</div>
+
+<!-- MODAL SENHA -->
+<div class="modal hidden" id="modalSenha">
+  <div class="modal-box">
+    <span class="fechar" onclick="fecharModal()">×</span>
+    <h3 id="tituloCapitulo"></h3>
+
+    <input type="password" id="senhaCapitulo" placeholder="Código do capítulo">
+    <button onclick="verificarSenhaCapitulo()">Desbloquear</button>
+  </div>
+</div>
+
+<script>
+/* ===== SENHAS ===== */
+const senhaGeral = "amarilis";
+
+const senhasCapitulos = {
+  licorina: "3492",
+  urticaria: "1390",
+  semente: "2617",
+  alteo: "3799"
+};
+
+let capituloAtual = "";
+
+/* LOGIN */
+function verificarSenhaGeral() {
+  if (senhaGeral === document.getElementById("senhaGeral").value) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("area-capitulos").classList.remove("hidden");
+  } else {
+    alert("Senha incorreta.");
+  }
+}
+
+/* ABRIR MODAL */
+function pedirSenha(cap) {
+  capituloAtual = cap;
+
+  const titulos = {
+    licorina: "Licorina de Amarílis",
+    urticaria: "Urticária",
+    semente: "“Semente” da Rebeldia",
+    alteo: "Alteo foi Amarílis"
+  };
+
+  document.getElementById("tituloCapitulo").innerText = titulos[cap];
+  document.getElementById("modalSenha").classList.remove("hidden");
+}
+
+/* FECHAR MODAL */
+function fecharModal() {
+  document.getElementById("modalSenha").classList.add("hidden");
+  document.getElementById("senhaCapitulo").value = "";
+}
+
+/* VERIFICAR CAPÍTULO */
+function verificarSenhaCapitulo() {
+  const senha = document.getElementById("senhaCapitulo").value;
+
+  if (senha !== senhasCapitulos[capituloAtual]) {
+    alert("Código incorreto.");
+    return;
+  }
+
+  mostrarConteudo(capituloAtual);
+  fecharModal();
+}
+
+/* CONTEÚDO */
+function mostrarConteudo(cap) {
+  const area = document.getElementById("conteudo");
+
+  if (cap === "licorina") {
+    area.innerHTML = `
+      <h3>Licorina de Amarílis</h3>
+      <div class="galeria">
+        <img src="imagensarquivo/carta1.png" alt="Carta 1">
+        <img src="imagensarquivo/carta2.png" alt="Carta 2">
+      </div>
+    `;
+  }
+
+  if (cap === "urticaria") {
+    area.innerHTML = `
+      <h3>Urticária</h3>
+      <div class="galeria">
+        <img src="imagensarquivo/img1.png">
+        <img src="imagensarquivo/img2.png">
+        <img src="imagensarquivo/img3.png">
+        <img src="imagensarquivo/img4.png">
+        <img src="imagensarquivo/img5.png">
+      </div>
+    `;
+  }
+
+  if (cap === "semente") {
+    area.innerHTML = `
+      <h3>“Semente” da Rebeldia</h3>
+      <p>Uma música, um personagem!</p>
+      <a href="https://open.spotify.com/playlist/2485BWucf50rP4ElElyI9V?si=G7RiOVOYR5qfgovwH7yx7Q" target="_blank">
+        Ouvir a playlist
+      </a>
+    `;
+  }
+
+  if (cap === "alteo") {
+    area.innerHTML = `
+      <h3>Alteo foi Amarílis</h3>
+
+      <img src="imagensarquivo/img6.png" class="imagem-capitulo">
+
+      <p class="texto-mitologia">
+        Na mitologia grega, Amarílis simboliza dedicação, orgulho e amor intenso.
+        A pastora Amaryllis perfurou o próprio coração com uma flecha dourada por
+        trinta noites para conquistar Alteo, fazendo nascer a flor vermelha de seu sangue.
+      </p>
+
+      <a class="botao-spotify"
+         href="https://open.spotify.com/intl-pt/track/0kv8hQMkkfBlJxHTBIUvhP?si=69e8abeb64bd40d6"
+         target="_blank">
+        ▶
+      </a>
+    `;
+  }
+}
+</script>
+
+</body>
+</html>
