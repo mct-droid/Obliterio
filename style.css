@@ -986,8 +986,8 @@ html, body {
   position: absolute !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 110% !important;      /* desktop grande */
-  height: auto !important;
+  width: 150% !important;      /* desktop grande */
+  height: center !important;
   top: 50% !important;
   z-index: 60;
 }
