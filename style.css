@@ -1054,3 +1054,51 @@ img, section, div {
     width: 80% !important;
   }
 }
+
+
+----------------------------------
+
+
+/* ================= DIVISÃO + CUTE CUTE – DEFINITIVO ================= */
+
+.divisor {
+  position: relative;
+  width: 100%;
+  height: clamp(160px, 22vw, 300px);
+  margin: -100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  overflow: hidden; /* 🔥 ISSO impede arrastar pro lado */
+}
+
+.divisor img {
+  width: min(90%, 900px);
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .divisor {
+    height: 180px;
+    margin: -70px 0;
+  }
+
+  .divisor img {
+    width: 70%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .divisor {
+    height: 140px;
+    margin: -50px 0;
+  }
+
+  .divisor img {
+    width: 55%;
+  }
+}
