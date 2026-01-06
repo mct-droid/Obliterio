@@ -155,10 +155,75 @@ body {
 
 /* ================= DIVISÃO FLUTUANTE ================= */
 
+.divisao-img {
+    position: absolute;
 
+    /* POSIÇÃO */
+    top: -535px;             /* 🔼 sobe / 🔽 desce */
+    left: 50%;               /* ↔ eixo horizontal */
+
+    transform: translateX(-50%);
+
+    /* TAMANHO */
+    width: 130%;
+    max-width: none;
+    height: auto;
+
+    /* VISUAL */
+    opacity: 1;              /* totalmente visível */
+    filter: 
+        drop-shadow(0 20px 50px rgba(0,0,0,0.7));
+
+    /* GARANTE QUE NÃO HERDA EFEITOS */
+    mix-blend-mode: normal;
+}
 
 /* ================= DIVISÃO INÍCIO → SINOPSE ================= */
 
+.divisao-inicio {
+    position: relative;
+    width: 100%;
+    height: clamp(180px, 22vw, 320px); /* controla o espaço */
+    margin-top: -100px; /* puxa pra cima no desktop */
+    z-index: 50;
+    pointer-events: none;
+}
+
+.divisao-inicio .divisao-img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+
+    width: clamp(320px, 70vw, 1100px);
+    height: auto;
+
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6));
+}
+
+/* 📱 TABLET */
+@media (max-width: 768px) {
+    .divisao-inicio {
+        height: 160px;
+        margin-top: -60px;
+    }
+
+    .divisao-inicio .divisao-img {
+        width: 90%;
+    }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 480px) {
+    .divisao-inicio {
+        height: 130px;
+        margin-top: -40px;
+    }
+
+    .divisao-inicio .divisao-img {
+        width: 95%;
+    }
+}
 
 
 /* ================= SINOPSE ================= */
@@ -234,6 +299,50 @@ body {
 
 /* ================= DIVISÃO CUTECUTE (FINAL) ================= */
 
+.divisao-wrapper {
+    position: relative;
+    width: 100%;
+    height: clamp(200px, 30vw, 420px);
+    margin-top: -120px;
+    z-index: 80;
+    pointer-events: none;
+}
+
+.cutecute-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 60%;        /* DESKTOP */
+    max-width: 900px;
+    height: auto;
+
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .divisao-wrapper {
+        height: 220px;
+        margin-top: -80px;
+    }
+
+    .cutecute-img {
+        width: 40%;   /* 🔥 MENOR NO MOBILE */
+    }
+}
+
+@media (max-width: 480px) {
+    .divisao-wrapper {
+        height: 180px;
+        margin-top: -60px;
+    }
+
+    .cutecute-img {
+        width: 15%;   /* 🔥 AINDA MENOR */
+    }
+}
 /* ================= DIVISOES FINAIS – FIX DEFINITIVO ================= */
 /* ================= DIVIDERS DEFINITIVO ================= */
 .divider {
