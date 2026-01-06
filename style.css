@@ -973,6 +973,7 @@ html, body {
   max-width: 100%;
 }
 
+
 @media (max-width: 768px) {
 
   .main-header {
@@ -1033,6 +1034,7 @@ html, body {
   }
 }
 
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 0 20px;
@@ -1048,4 +1050,3 @@ html, body {
     font-size: 16px;
   }
 }
-
