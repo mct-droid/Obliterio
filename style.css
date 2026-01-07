@@ -998,6 +998,8 @@ html, body {
   height: auto;
   position: relative;
   top: 100px; /* MUDA ISSO pra subir/descer */
+     /* 🔥 CONTROLE VERTICAL — MUDA SÓ ISSO */
+  margin: -120px 0 40px;       /* ↑ sobe | ↓ desce */
 }
 
 
