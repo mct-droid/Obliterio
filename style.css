@@ -997,7 +997,7 @@ html, body {
   max-width: 90%;
   height: auto;
   position: relative;
-  top: 0px; /* MUDA ISSO pra subir/descer */
+  top: 50px; /* MUDA ISSO pra subir/descer */
 }
 
 
