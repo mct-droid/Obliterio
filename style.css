@@ -981,55 +981,64 @@ html, body {
 
 
 
-/* ================= CONTROLE REAL DAS IMAGENS ================= */
+/* ================= DIVISORES FIXOS (SEM CONFLITO) ================= */
 
-/* CONTAINERS */
-.divisor,
-.cutecute-divider {
-  position: relative;
+/* DIVISÃO */
+.divisor-fixo {
   width: 100%;
-  overflow: hidden; /* impede arrastar pro lado */
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 80px 0;
+  overflow: hidden;
 }
 
-/* ===== DIVISAO ===== */
-.img-divisao {
-  position: relative; /* AGORA top funciona */
-  width: 100%;         /* TAMANHO */
-  top: 50px;           /* 🔼 sobe / 🔽 desce */
+.divisor-fixo img {
+  width: 90%;
+  max-width: 900px;
+  height: auto;
 }
 
-/* ===== CUTECUTE ===== */
-.img-cutecute {
-  position: relative;
+/* CUTECUTE */
+.cutecute-fixo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+  overflow: hidden;
+}
+
+.cutecute-fixo img {
   width: 60%;
-  top: 0px;
+  max-width: 500px;
+  height: auto;
 }
 
-/* ---------- TABLET ---------- */
+/* TABLET */
 @media (max-width: 768px) {
-  .img-divisao {
-    width: 90%;
-    top: 0px;
+  .divisor-fixo img {
+    width: 80%;
   }
 
-  .img-cutecute {
-    width: 70%;
-    top: 0px;
+  .cutecute-fixo img {
+    width: 50%;
   }
 }
 
-/* ---------- CELULAR ---------- */
+/* CELULAR */
 @media (max-width: 480px) {
-  .img-divisao {
-    width: 95%;
-    top: 0px;
+  .divisor-fixo {
+    margin: 50px 0;
   }
 
-  .img-cutecute {
-    width: 80%;
-    top: 0px;
+  .divisor-fixo img {
+    width: 90%;
+  }
+
+  .cutecute-fixo {
+    margin: 40px 0;
+  }
+
+  .cutecute-fixo img {
+    width: 65%;
   }
 }
