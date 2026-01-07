@@ -997,8 +997,8 @@ html, body {
 /* ===== DIVISAO ===== */
 .img-divisao {
   position: relative; /* AGORA top funciona */
-  width: 80%;         /* TAMANHO */
-  top: 0px;           /* 🔼 sobe / 🔽 desce */
+  width: 100%;         /* TAMANHO */
+  top: 50px;           /* 🔼 sobe / 🔽 desce */
 }
 
 /* ===== CUTECUTE ===== */
