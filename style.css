@@ -137,6 +137,7 @@ body {
 .divisao-img {
     position: absolute;
     /* POSIÇÃO */
+    
     top: -535px;             /* sobe e desce BURRA */
     left: 50%;               /* ↔ eixo horizontal */
     transform: translateX(-50%);
@@ -633,10 +634,10 @@ section:has(.personagens-box) {
 }
 /* IMAGEM */
 .divisao-img {
-    position: absolute;
+    position: sticky;
     top: 50%;             /* controla subir/descer */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-260px);
     width: 65%;           /* DESKTOP */
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
